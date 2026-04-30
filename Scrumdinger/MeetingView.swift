@@ -27,6 +27,7 @@ struct MeetingView: View {
                 }
             }
         }
+        .padding()
     }
 }
 
