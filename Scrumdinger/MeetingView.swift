@@ -17,6 +17,8 @@ struct MeetingView: View {
                     Label("600", systemImage: "hourglass.bottomhalf.fill")
                 }
             }
+            Circle()
+                .strokeBorder(lineWidth: 24)
         }
     }
 }
