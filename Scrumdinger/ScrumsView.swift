@@ -9,5 +9,5 @@ struct ScrumsView: View {
 }
 
 #Preview {
-    ScrumsView()
+    ScrumsView(scrums: DailyScrum.sampleData)
 }
