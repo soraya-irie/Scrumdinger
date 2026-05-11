@@ -4,8 +4,10 @@ import ThemeKit
 struct CardView: View {
     let scrum: DailyScrum
     var body: some View {
-        Text(scrum.title)
-            .font(.headline)
+        VStack(alignment: .leading) {
+            Text(scrum.title)
+                .font(.headline)
+        }
     }
 }
 
