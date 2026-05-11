@@ -9,5 +9,7 @@ struct DetailView: View {
 }
 
 #Preview {
-    DetailView(scrum: DailyScrum.sampleData[0])
+    NavigationStack {
+        DetailView(scrum: DailyScrum.sampleData[0])
+    }
 }
