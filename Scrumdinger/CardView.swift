@@ -7,6 +7,10 @@ struct CardView: View {
         VStack(alignment: .leading) {
             Text(scrum.title)
                 .font(.headline)
+            Spacer()
+            HStack {
+                Label("\(scrum.attendees.count)", systemImage: "person.3")
+            }
         }
     }
 }
