@@ -1,4 +1,5 @@
 import SwiftUI
+import ThemeKit
 
 struct CardView: View {
     let scrum: DailyScrum
@@ -10,4 +11,5 @@ struct CardView: View {
 #Preview {
     let scrum = DailyScrum.sampleData[0]
     CardView(scrum: scrum)
+        .background(scrum.theme.mainColor)
 }
