@@ -10,7 +10,7 @@ struct CardView: View {
             Spacer()
             HStack {
                 Label("\(scrum.attendees.count)", systemImage: "person.3")
-                Label("Label", systemImage: "clock")
+                Label("\(scrum.lengthInMinutes)", systemImage: "clock")
             }
         }
     }
