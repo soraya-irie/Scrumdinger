@@ -13,6 +13,11 @@ struct ScrumsView: View {
                 .listRowBackground(scrum.theme.mainColor)
             }
             .navigationTitle("Daily Scrums")
+            .toolbar {
+                Button(action: {}) {
+                    Image(systemName: "plus")
+                }
+            }
         }
     }
 }
