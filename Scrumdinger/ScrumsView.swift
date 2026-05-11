@@ -9,8 +9,8 @@ struct ScrumsView: View {
             List(scrums) { scrum in
                 NavigationLink(destination: Text(scrum.title)) {
                     CardView(scrum: scrum)
-                        .listRowBackground(scrum.theme.mainColor)
                 }
+                .listRowBackground(scrum.theme.mainColor)
             }
         }
     }
