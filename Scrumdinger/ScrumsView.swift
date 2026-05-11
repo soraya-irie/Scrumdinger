@@ -7,8 +7,10 @@ struct ScrumsView: View {
     var body: some View {
         NavigationStack {
             List(scrums) { scrum in
-                CardView(scrum: scrum)
-                    .listRowBackground(scrum.theme.mainColor)
+                NavigationLink(destination: Text(scrum.title)) {
+                    CardView(scrum: scrum)
+                        .listRowBackground(scrum.theme.mainColor)
+                }
             }
         }
     }
