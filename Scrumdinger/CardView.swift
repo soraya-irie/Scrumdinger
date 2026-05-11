@@ -8,5 +8,6 @@ struct CardView: View {
 }
 
 #Preview {
-    CardView()
+    let scrum = DailyScrum.sampleData[0]
+    CardView(scrum: scrum)
 }
