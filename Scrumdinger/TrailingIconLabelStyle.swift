@@ -8,3 +8,7 @@ struct TrailingIconLabelStyle: LabelStyle {
         }
     }
 }
+
+extension LabelStyle where Self == TrailingIconLabelStyle {
+    static var trailingIcon: Self { Self() }
+}
