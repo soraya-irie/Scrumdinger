@@ -42,6 +42,7 @@ struct DetailView: View {
         .toolbar {
             Button("Edit") {
                 isPresentingEditView = true
+                editingScrum = scrum
             }
         }
         .sheet(isPresented: $isPresentingEditView) {
