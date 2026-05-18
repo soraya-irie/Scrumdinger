@@ -6,7 +6,9 @@ struct ThemeView: View {
 
     var body: some View {
         Text(theme.name)
+            .frame(maxWidth: .infinity)
             .background(theme.mainColor)
+            .clipShape(RoundedRectangle(cornerRadius: 4))
     }
 }
 
