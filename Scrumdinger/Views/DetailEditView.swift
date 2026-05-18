@@ -46,5 +46,6 @@ struct DetailEditView: View {
 }
 
 #Preview {
-    DetailEditView()
+    @Previewable @State var scrum = DailyScrum.sampleData[0]
+    DetailEditView(scrum: $scrum)
 }
