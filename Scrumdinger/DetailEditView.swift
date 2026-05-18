@@ -25,6 +25,9 @@ struct DetailEditView: View {
                 }
                 HStack {
                     TextField("New Attendee", text: $attendeeName)
+                    Button(action: {}) {
+                        Image(systemName: "plus.circle.fill")
+                    }
                 }
             }
         }
