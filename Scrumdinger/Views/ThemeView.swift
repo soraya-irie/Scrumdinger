@@ -8,6 +8,7 @@ struct ThemeView: View {
         Text(theme.name)
             .frame(maxWidth: .infinity)
             .background(theme.mainColor)
+            .foregroundColor(theme.accentColor)
             .clipShape(RoundedRectangle(cornerRadius: 4))
     }
 }
