@@ -44,7 +44,9 @@ struct DetailView: View {
             }
         }
         .sheet(isPresented: $isPresentingEditView) {
-            DetailEditView()
+            NavigationStack {
+                DetailEditView()
+            }
         }
     }
 }
