@@ -29,6 +29,7 @@ struct DetailEditView: View {
                         withAnimation {
                             let attendee = DailyScrum.Attendee(name: attendeeName)
                             scrum.attendees.append(attendee)
+                            attendeeName = ""
                         }
                     }) {
                         Image(systemName: "plus.circle.fill")
