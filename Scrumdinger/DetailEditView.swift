@@ -15,6 +15,7 @@ struct DetailEditView: View {
                     .accessibilityValue("\(scrum.lengthInMinutes) minutes")
                     Spacer()
                     Text("\(scrum.lengthInMinutes) minutes")
+                        .accessibilityHidden(true)
                 }
             }
             Section(header: Text("Attendees")) {
