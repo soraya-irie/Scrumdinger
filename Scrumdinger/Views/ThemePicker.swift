@@ -10,5 +10,6 @@ struct ThemePicker: View {
 }
 
 #Preview {
-    ThemePicker()
+    @Previewable @State var theme = Theme.periwinkle
+    ThemePicker(selection: $theme)
 }
