@@ -2,7 +2,7 @@ import SwiftUI
 import ThemeKit
 
 struct ScrumsView: View {
-    let scrums: [DailyScrum]
+    @Binding var scrums: [DailyScrum]
 
     var body: some View {
         NavigationStack {
