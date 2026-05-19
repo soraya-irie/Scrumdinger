@@ -4,6 +4,7 @@ struct MeetingView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16.0)
+                .fill(scrum.theme.mainColor)
             VStack {
                 ProgressView(value: 5, total: 15)
                 HStack {
