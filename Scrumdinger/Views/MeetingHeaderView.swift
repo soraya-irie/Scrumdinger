@@ -1,5 +1,6 @@
 import SwiftUI
 import ThemeKit
+import TimerKit
 
 struct MeetingHeaderView: View {
     let secondsElapsed: Int
@@ -20,6 +21,7 @@ struct MeetingHeaderView: View {
     var body: some View {
         VStack {
             ProgressView(value: progress)
+                .progressViewStyle(ScrumProgressViewStyle(theme: theme))
             HStack {
                 VStack(alignment: .leading) {
                     Text("Seconds Elapsed")
