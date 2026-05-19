@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct MeetingHeaderView: View {
+    let secondsElapsed: Int
+    let secondsRemaining: Int
     var body: some View {
         VStack {
             ProgressView(value: 5, total: 15)
@@ -25,5 +27,5 @@ struct MeetingHeaderView: View {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    MeetingHeaderView()
+    MeetingHeaderView(secondsElapsed: 60, secondsRemaining: 180)
 }
