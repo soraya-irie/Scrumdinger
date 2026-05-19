@@ -42,5 +42,6 @@ struct MeetingView: View {
 }
 
 #Preview {
-    MeetingView()
+    @Previewable @State var scrum = DailyScrum.sampleData[0]
+    MeetingView(scrum: $scrum)
 }
