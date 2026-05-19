@@ -1,6 +1,8 @@
 import SwiftUI
+import ThemeKit
 
 struct MeetingView: View {
+    @Binding var scrum: DailyScrum
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16.0)
