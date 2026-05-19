@@ -1,8 +1,11 @@
 import SwiftUI
 import ThemeKit
+import TimerKit
 
 struct MeetingView: View {
     @Binding var scrum: DailyScrum
+    @State var scrumTimer = ScrumTimer()
+
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16.0)
