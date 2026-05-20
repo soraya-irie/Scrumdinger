@@ -1,6 +1,7 @@
 import SwiftUI
 import ThemeKit
 import TimerKit
+import AVFoundation
 
 struct MeetingView: View {
     @Binding var scrum: DailyScrum
