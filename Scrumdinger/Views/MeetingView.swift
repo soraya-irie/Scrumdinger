@@ -7,6 +7,8 @@ struct MeetingView: View {
     @Binding var scrum: DailyScrum
     @State var scrumTimer = ScrumTimer()
 
+    private let player = AVPlayer.dingPlayer()
+
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16.0)
