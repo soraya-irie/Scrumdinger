@@ -17,13 +17,19 @@ struct MeetingFooterView: View {
         return "Speaker \(speakerNumber) of \(speakers.count)"
     }
     var body: some View {
-        HStack {
-            Text(speakerText)
-            Spacer()
-            Button(action: {}) {
-                Image(systemName: "forward.fill")
+        VStack {
+            HStack {
+                if isLastSpeaker {
+                    Text("Last Speaker")
+                } else {
+                    Text(speakerText)
+                    Spacer()
+                    Button(action: {}) {
+                        Image(systemName: "forward.fill")
+                    }
+                    .accessibilityLabel("Next speaker")
+                }
             }
-            .accessibilityLabel("Next speaker")
         }
     }
 }
