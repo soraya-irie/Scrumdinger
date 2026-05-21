@@ -5,6 +5,7 @@ struct DetailEditView: View {
     let saveEdits: (DailyScrum) -> Void
 
     @State private var attendeeName = ""
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         Form {
