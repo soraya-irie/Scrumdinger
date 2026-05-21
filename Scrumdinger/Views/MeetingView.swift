@@ -28,6 +28,7 @@ struct MeetingView: View {
             scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendeeNames: scrum.attendees.map { $0.name })
             scrumTimer.speakerChangedAction = {
                 player.seek(to: .zero)
+                player.play()
             }
             scrumTimer.startScrum()
         }
