@@ -21,6 +21,8 @@ struct ScrumsView: View {
                 .accessibilityLabel("New Scrum")
             }
         }
+        .sheet(isPresented: $isPresentingNewScrumView) {
+        }
     }
 }
 
