@@ -26,6 +26,8 @@ struct MeetingView: View {
         .foregroundColor(scrum.theme.accentColor)
         .onAppear {
             scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendeeNames: scrum.attendees.map { $0.name })
+            scrumTimer.speakerChangedAction = {
+            }
             scrumTimer.startScrum()
         }
         .onDisappear {
