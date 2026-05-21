@@ -2,6 +2,8 @@ import SwiftUI
 
 struct DetailEditView: View {
     @Binding var scrum: DailyScrum
+    let saveEdits: (DailyScrum) -> Void
+
     @State private var attendeeName = ""
 
     var body: some View {
@@ -47,5 +49,5 @@ struct DetailEditView: View {
 
 #Preview {
     @Previewable @State var scrum = DailyScrum.sampleData[0]
-    DetailEditView(scrum: $scrum)
+    DetailEditView(scrum: $scrum, saveEdits: { _ in })
 }
