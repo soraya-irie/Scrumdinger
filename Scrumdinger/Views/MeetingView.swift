@@ -4,7 +4,8 @@ import TimerKit
 import AVFoundation
 
 struct MeetingView: View {
-    @Binding var scrum: DailyScrum
+    @Environment(\.modelContext) private context
+    let scrum: DailyScrum
     @State var scrumTimer = ScrumTimer()
 
     private let player = AVPlayer.dingPlayer()
@@ -46,6 +47,7 @@ struct MeetingView: View {
         scrumTimer.stopScrum()
         let newHistory = History(attendees: scrum.attendees)
         scrum.history.insert(newHistory, at: 0)
+        try? context.save()
     }
 }
 
