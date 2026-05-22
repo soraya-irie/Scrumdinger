@@ -11,6 +11,7 @@ struct DetailEditView: View {
     @State private var attendees: [Attendee]
     @State private var theme: Theme
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var context
 
     private var isCreatingScrum: Bool
 
@@ -77,11 +78,24 @@ struct DetailEditView: View {
             }
             ToolbarItem(placement: .confirmationAction) {
                 Button("Done") {
-                    saveEdits(scrum)
+                    saveEdits()
                     dismiss()
                 }
             }
         }
+    }
+
+    private func saveEdits() {
+        scrum.title = title
+        scrum.lengthInMinutesAsDouble = lengthInMinutesAsDouble
+        scrum.attendees = attendees
+        scrum.theme = theme
+
+        if isCreatingScrum {
+            context.insert(scrum)
+        }
+
+        try? context.save()
     }
 }
 
