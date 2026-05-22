@@ -7,6 +7,7 @@ struct NewScrumSheet: View {
     var body: some View {
         NavigationStack {
             DetailEditView(scrum: $newScrum, saveEdits: { dailyScrum in
+                scrums.append(newScrum)
             })
         }
     }
