@@ -13,3 +13,7 @@ struct DailyScrumSampleData: PreviewModifier {
         content.modelContainer(context)
     }
 }
+
+extension PreviewTrait where T == Preview.ViewTraits {
+    @MainActor static var dailyScrumsSampleData: Self = .modifier(DailyScrumSampleData())
+}
