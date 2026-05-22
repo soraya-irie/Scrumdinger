@@ -8,4 +8,8 @@ struct DailyScrumSampleData: PreviewModifier {
         DailyScrum.sampleData.forEach { container.mainContext.insert($0)}
         return container
     }
+
+    func body(content: Content, context: ModelContainer) -> some View {
+        content.modelContainer(context)
+    }
 }
