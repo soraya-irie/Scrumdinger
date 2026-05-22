@@ -2,9 +2,10 @@ import SwiftUI
 import ThemeKit
 import TimerKit
 import AVFoundation
+import SwiftData
 
 struct MeetingView: View {
-    @Environment(\.modelContext) private context
+    @Environment(\.modelContext) private var context
     let scrum: DailyScrum
     @State var scrumTimer = ScrumTimer()
 
