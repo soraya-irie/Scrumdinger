@@ -1,6 +1,11 @@
-import Foundation
 import SwiftData
+import SwiftUI
 
 struct DailyScrumSampleData: PreviewModifier {
 
+    static func makeSharedContext() async throws -> ModelContainer {
+        let container = try ModelContainer(for: DailyScrum.self, configurations: .init(isStoredInMemoryOnly: true))
+        DailyScrum.sampleData.forEach { container.mainContext.insert($0)}
+        return container
+    }
 }
