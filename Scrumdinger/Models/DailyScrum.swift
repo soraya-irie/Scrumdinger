@@ -1,8 +1,10 @@
 import Foundation
 import ThemeKit
+import SwiftData
 
-struct DailyScrum: Identifiable {
-    let id: UUID
+@Model
+class DailyScrum: Identifiable {
+    var id: UUID
     var title: String
     var attendees: [Attendee]
     var lengthInMinutes: Int
