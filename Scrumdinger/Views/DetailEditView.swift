@@ -1,5 +1,6 @@
 import SwiftUI
 import ThemeKit
+import SwiftData
 
 struct DetailEditView: View {
     let scrum: DailyScrum
@@ -7,6 +8,7 @@ struct DetailEditView: View {
     @State private var attendeeName = ""
     @State private var title: String
     @State private var lengthInMinutesAsDouble: Double
+    @State private var attendees: [Attendee]
     @State private var theme: Theme
     @Environment(\.dismiss) private var dismiss
 
@@ -28,18 +30,18 @@ struct DetailEditView: View {
                 ThemePicker(selection: $theme)
             }
             Section(header: Text("Attendees")) {
-                ForEach(scrum.attendees) { attendee in
+                ForEach(attendees) { attendee in
                     Text(attendee.name)
                 }
                 .onDelete { indices in
-                    scrum.attendees.remove(atOffsets: indices)
+                    attendees.remove(atOffsets: indices)
                 }
                 HStack {
                     TextField("New Attendee", text: $attendeeName)
                     Button(action: {
                         withAnimation {
                             let attendee = Attendee(name: attendeeName)
-                            scrum.attendees.append(attendee)
+                            attendees.append(attendee)
                             attendeeName = ""
                         }
                     }) {
@@ -66,7 +68,7 @@ struct DetailEditView: View {
     }
 }
 
-#Preview {
-    @Previewable @State var scrum = DailyScrum.sampleData[0]
-    DetailEditView(scrum: $scrum, saveEdits: { _ in })
+#Preview(traits: .dailyScrumsSampleData) {
+    @Previewable @Query(sort: \DailyScrum.title) var scrums: [DailyScrum]
+    DetailEditView(scrum: scrums[0])
 }
