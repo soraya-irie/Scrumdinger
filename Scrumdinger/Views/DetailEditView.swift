@@ -1,11 +1,12 @@
 import SwiftUI
 
 struct DetailEditView: View {
-    @Binding var scrum: DailyScrum
-    let saveEdits: (DailyScrum) -> Void
+    let scrum: DailyScrum
 
     @State private var attendeeName = ""
     @Environment(\.dismiss) private var dismiss
+
+    private var isCreatingScrum: Bool
 
     var body: some View {
         Form {
