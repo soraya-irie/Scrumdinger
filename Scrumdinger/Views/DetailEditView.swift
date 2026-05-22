@@ -14,6 +14,23 @@ struct DetailEditView: View {
 
     private var isCreatingScrum: Bool
 
+    init(scrum: DailyScrum?) {
+        let scrumToEdit: DailyScrum
+        if let scrum {
+            scrumToEdit = scrum
+            isCreatingScrum = false
+        } else {
+            scrumToEdit = DailyScrum(title: "", attendees: [], lengthInMinutes: 5, theme: .sky)
+            isCreatingScrum = true
+        }
+
+        self.scrum = scrumToEdit
+        self.title = scrumToEdit.title
+        self.lengthInMinutesAsDouble = scrumToEdit.lengthInMinutesAsDouble
+        self.attendees = scrumToEdit.attendees
+        self.theme = scrumToEdit.theme
+    }
+
     var body: some View {
         Form {
             Section(header: Text("Meeting Info")) {
