@@ -6,6 +6,8 @@ import SwiftData
 class DailyScrum: Identifiable {
     var id: UUID
     var title: String
+
+    @Relationship(deleteRule: .cascade, inverse: \Attendee.dailyScrum)
     var attendees: [Attendee]
     var lengthInMinutes: Int
     var lengthInMinutesAsDouble: Double {
@@ -17,6 +19,8 @@ class DailyScrum: Identifiable {
         }
     }
     var theme: Theme
+
+    @Relationship(deleteRule: .cascade, inverse: \History.dailyScrum)
     var history: [History] = []
 
     init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, theme: Theme) {
