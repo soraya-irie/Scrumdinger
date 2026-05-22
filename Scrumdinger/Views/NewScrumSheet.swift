@@ -2,6 +2,7 @@ import SwiftUI
 
 struct NewScrumSheet: View {
     @State private var newScrum = DailyScrum.emptyScrum
+    @Binding var scrums: [DailyScrum]
 
     var body: some View {
         NavigationStack {
@@ -12,5 +13,5 @@ struct NewScrumSheet: View {
 }
 
 #Preview {
-    NewScrumSheet()
+    NewScrumSheet(scrums: .constant(DailyScrum.sampleData))
 }
