@@ -1,9 +1,13 @@
 import SwiftUI
+import ThemeKit
 
 struct DetailEditView: View {
     let scrum: DailyScrum
 
     @State private var attendeeName = ""
+    @State private var title: String
+    @State private var lengthInMinutesAsDouble: Double
+    @State private var theme: Theme
     @Environment(\.dismiss) private var dismiss
 
     private var isCreatingScrum: Bool
@@ -11,17 +15,17 @@ struct DetailEditView: View {
     var body: some View {
         Form {
             Section(header: Text("Meeting Info")) {
-                TextField("Title", text: $scrum.title)
+                TextField("Title", text: $title)
                 HStack {
-                    Slider(value: $scrum.lengthInMinutesAsDouble, in: 5...30, step: 1) {
+                    Slider(value: $lengthInMinutesAsDouble, in: 5...30, step: 1) {
                         Text("Length")
                     }
-                    .accessibilityValue("\(scrum.lengthInMinutes) minutes")
+                    .accessibilityValue("\(String(format: "%.0f", lengthInMinutesAsDouble)) minutes")
                     Spacer()
-                    Text("\(scrum.lengthInMinutes) minutes")
+                    Text("\(String(format: "%.0f", lengthInMinutesAsDouble)) minutes")
                         .accessibilityHidden(true)
                 }
-                ThemePicker(selection: $scrum.theme)
+                ThemePicker(selection: $theme)
             }
             Section(header: Text("Attendees")) {
                 ForEach(scrum.attendees) { attendee in
