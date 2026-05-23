@@ -22,6 +22,10 @@ struct MeetingTimerView: View {
                 .accessibilityElement(children: .combine)
                 .foregroundStyle(theme.accentColor)
             }
+            .overlay {
+
+            }
+            .padding(.horizontal)
     }
 }
 
