@@ -26,6 +26,7 @@ struct MeetingTimerView: View {
                 ForEach(speakers) { speaker in
                     if speaker.isCompleted, let index = speakers.firstIndex(where: { $0.id == speaker.id }) {
                         SpeakerArk(speakerIndex: index, totalSpeakers: speakers.count)
+                            .rotation(Angle(degrees: -90))
                     }
                 }
             }
