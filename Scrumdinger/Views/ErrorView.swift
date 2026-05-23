@@ -16,6 +16,8 @@ struct ErrorView: View {
             Spacer()
         }
         .padding()
+        .background(.ultraThinMaterial)
+        .cornerRadius(16)
     }
 }
 
