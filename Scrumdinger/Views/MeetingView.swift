@@ -8,6 +8,7 @@ struct MeetingView: View {
     @Environment(\.modelContext) private var context
     let scrum: DailyScrum
     @State var scrumTimer = ScrumTimer()
+    @Binding var errorWrapper: ErrorWrapper?
 
     private let player = AVPlayer.dingPlayer()
 
@@ -54,5 +55,5 @@ struct MeetingView: View {
 
 #Preview {
     let scrum = DailyScrum.sampleData[0]
-    MeetingView(scrum: scrum)
+    MeetingView(scrum: scrum, errorWrapper: .constant(nil))
 }
