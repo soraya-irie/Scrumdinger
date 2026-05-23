@@ -14,7 +14,8 @@ struct MeetingTimerView: View {
         Circle()
             .strokeBorder(lineWidth: 24)
             .overlay {
-                Text("Placeholder")
+                Text(currentSpeaker)
+                    .font(.title)
             }
     }
 }
