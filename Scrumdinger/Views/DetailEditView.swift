@@ -88,6 +88,11 @@ struct DetailEditView: View {
                 }
             }
         }
+        .sheet(item: $errorWrapper) {
+            dismiss()
+        } content: { wrapper in
+            ErrorView(errorWrapper: wrapper)
+        }
     }
 
     private func saveEdits() throws {
