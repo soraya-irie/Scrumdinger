@@ -7,6 +7,9 @@ struct SpeakerArk: Shape {
     private var degreesPerSpeaker: Double {
         360.0 / Double(totalSpeakers)
     }
+    private var startAngle: Angle {
+        Angle(degrees: degreesPerSpeaker * Double(speakerIndex) + 1.0)
+    }
 
     func path(in rect: CGRect) -> Path {
         return Path { path in
