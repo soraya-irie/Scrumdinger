@@ -31,7 +31,11 @@ struct MeetingView: View {
             startScrum()
         }
         .onDisappear {
-            endScrum()
+            do {
+                try endScrum()
+            } catch {
+                errorWrapper = ErrorWrapper(error: error, guidance: "Meeting time was not recorded. Try again later.")
+            }
         }
         .navigationBarTitleDisplayMode(.inline)
     }
