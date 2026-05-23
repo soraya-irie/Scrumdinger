@@ -16,6 +16,7 @@ struct SpeakerArk: Shape {
 
     func path(in rect: CGRect) -> Path {
         let diameter = min(rect.size.width, rect.size.height) - 24.0
+        let radius = diameter / 2.0
         return Path { path in
         }
     }
