@@ -63,6 +63,9 @@ struct DetailView: View {
                     .navigationTitle(scrum.title)
             }
         }
+        .sheet(item: $errorWrappr, onDismiss: nil) { wrapper in
+            ErrorView(errorWrapper: wrapper)
+        }
     }
 }
 
