@@ -86,7 +86,7 @@ struct DetailEditView: View {
         }
     }
 
-    private func saveEdits() {
+    private func saveEdits() throws {
         scrum.title = title
         scrum.lengthInMinutesAsDouble = lengthInMinutesAsDouble
         scrum.attendees = attendees
@@ -96,7 +96,7 @@ struct DetailEditView: View {
             context.insert(scrum)
         }
 
-        try? context.save()
+        try context.save()
     }
 }
 
