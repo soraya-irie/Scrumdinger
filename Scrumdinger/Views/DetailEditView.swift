@@ -79,8 +79,12 @@ struct DetailEditView: View {
             }
             ToolbarItem(placement: .confirmationAction) {
                 Button("Done") {
-                    saveEdits()
-                    dismiss()
+                    do {
+                        try saveEdits()
+                        dismiss()
+                    } catch {
+                        errorWrapper = ErrorWrapper(error: error, guidance: "Daily scrum was not recorded. Try again later.")
+                    }
                 }
             }
         }
