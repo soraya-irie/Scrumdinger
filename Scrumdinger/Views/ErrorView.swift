@@ -8,6 +8,10 @@ struct ErrorView: View {
     }
 }
 
+private enum SampleError: Error {
+    case errorRequired
+}
+
 #Preview {
     ErrorView()
 }
