@@ -13,5 +13,5 @@ private enum SampleError: Error {
 }
 
 #Preview {
-    ErrorView()
+    ErrorView(errorWrapper: ErrorWrapper(error: SampleError.errorRequired, guidance: "You can safely ignore this error."))
 }
