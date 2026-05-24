@@ -3,12 +3,14 @@ import ThemeKit
 import TimerKit
 import AVFoundation
 import SwiftData
+import TranscriptionKit
 
 struct MeetingView: View {
     @Environment(\.modelContext) private var context
     let scrum: DailyScrum
     @State var scrumTimer = ScrumTimer()
     @Binding var errorWrapper: ErrorWrapper?
+    @State var speechRecognizer = SpeechRecognizer()
 
     private let player = AVPlayer.dingPlayer()
 
