@@ -11,6 +11,7 @@ struct MeetingView: View {
     @State var scrumTimer = ScrumTimer()
     @Binding var errorWrapper: ErrorWrapper?
     @State var speechRecognizer = SpeechRecognizer()
+    @State var isRecording = false
 
     private let player = AVPlayer.dingPlayer()
 
