@@ -4,6 +4,7 @@ import TimerKit
 
 struct MeetingTimerView: View {
     let speakers: [ScrumTimer.Speaker]
+    let isRecording: Bool
     let theme: Theme
 
     private var currentSpeaker: String {
@@ -37,5 +38,5 @@ struct MeetingTimerView: View {
 
 #Preview {
     let speakers = [ScrumTimer.Speaker(name: "Bill", isCompleted: true), ScrumTimer.Speaker(name: "Cathy", isCompleted: false)]
-    MeetingTimerView(speakers: speakers, theme: .yellow)
+    MeetingTimerView(speakers: speakers, isRecording: true, theme: .yellow)
 }
