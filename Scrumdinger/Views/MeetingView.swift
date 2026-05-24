@@ -54,6 +54,7 @@ struct MeetingView: View {
 
     private func endScrum() throws {
         scrumTimer.stopScrum()
+        speechRecognizer.stopTranscribing()
         let newHistory = History(attendees: scrum.attendees)
         scrum.history.insert(newHistory, at: 0)
         try context.save()
