@@ -59,7 +59,7 @@ struct MeetingView: View {
         speechRecognizer.stopTranscribing()
         isRecording = false
         let newHistory = History(attendees: scrum.attendees,
-                                 transcrpit: speechRecognizer.transcript)
+                                 transcript: speechRecognizer.transcript)
         scrum.history.insert(newHistory, at: 0)
         try context.save()
     }
