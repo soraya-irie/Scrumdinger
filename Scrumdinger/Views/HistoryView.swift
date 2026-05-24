@@ -19,6 +19,8 @@ struct HistoryView: View {
                 }
             }
         }
+        .navigationTitle(Text(history.date, style: .date))
+        .padding()
     }
 }
 
