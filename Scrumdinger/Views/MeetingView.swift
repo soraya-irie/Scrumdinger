@@ -50,6 +50,7 @@ struct MeetingView: View {
         }
         speechRecognizer.resetTranscript()
         speechRecognizer.startTranscribing()
+        isRecording = true
         scrumTimer.startScrum()
     }
 
